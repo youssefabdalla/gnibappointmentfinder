@@ -10,6 +10,15 @@ import java.util.Scanner;
  * Created by AbdallaY on 05/10/2019.
  */
 public class ApplicantInfoReader {
+
+    public static final String GIVEN_NAME = "givenName";
+    public static final String FAMILY_NAME = "familyName";
+    public static final String DOB = "dob";
+    public static final String NATIONAL = "national";
+    public static final String EMAIL = "email";
+    public static final String FAMILY_Y_OR_N = "familyYOrN";
+    public static final String PASSPORT_NUM = "passportNum";
+
     public void getApplicantInfoInFile() throws IOException {
         File applicantInfoFile = new File("applicant-info.properties");
         if (applicantInfoFile.exists()) {
@@ -56,13 +65,13 @@ public class ApplicantInfoReader {
         System.out.println("passport number:");
         String passportNum = info.nextLine();
 
-        applicantInfosProp.setProperty("givenName", givenName);
-        applicantInfosProp.setProperty("familyName", familyName);
-        applicantInfosProp.setProperty("dob", dob);
-        applicantInfosProp.setProperty("national", national);
-        applicantInfosProp.setProperty("email", email);
-        applicantInfosProp.setProperty("familyYOrN", familyYOrN);
-        applicantInfosProp.setProperty("passportNum", passportNum);
+        applicantInfosProp.setProperty(GIVEN_NAME, givenName);
+        applicantInfosProp.setProperty(FAMILY_NAME, familyName);
+        applicantInfosProp.setProperty(DOB, dob);
+        applicantInfosProp.setProperty(NATIONAL, national);
+        applicantInfosProp.setProperty(EMAIL, email);
+        applicantInfosProp.setProperty(FAMILY_Y_OR_N, familyYOrN);
+        applicantInfosProp.setProperty(PASSPORT_NUM, passportNum);
         return applicantInfosProp;
     }
 }
